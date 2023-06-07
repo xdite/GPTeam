@@ -6,13 +6,13 @@ from .plans import LLMSinglePlan
 
 
 class Reaction(Enum):
-    CONTINUE = "继续"
-    POSTPONE = "推迟"
-    CANCEL = "取消"
+    CONTINUE = "cotinue"
+    POSTPONE = "postpone"
+    CANCEL = "cancel"
 
 class LLMReactionResponse(BaseModel):
     reaction: Reaction = Field(
-        description="对该信息的反应。必须是 '继续'、'推迟' 或 '取消' 中的一个。不要提供其他东西。"
+        description="对该信息的反应。必须是 'cotinue'、'postpone' 或 'cancel' 中的一个。不要提供其他东西。"
     )
     thought_process: str = Field(
         description="对最近发生的事情进行总结，为什么选择这种反应，如果适用，应该做什么来代替当前的计划。以这种格式表述： '我应该继续/推迟/取消我的计划，因为......'"
