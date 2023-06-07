@@ -2,8 +2,8 @@
     "world_name": "Paper Trail Inc.",
     "locations": [
         {
-            "name": "Executive Offices",
-            "description": "Marty著名的工作空间。房间里有一张坚实的橡木办公桌，一个玻璃书柜，里面装满了Marty从未读过的商业书籍，还能看到外面造纸厂的全景。不要忘了，这是办公室里唯一有吊扇的房间。"
+            "name": "Executive Office",
+            "description": " Marty 著名的工作空间。房间里有一张坚实的橡木办公桌，一个玻璃书柜，里面装满了Marty从未读过的商业书籍，还能看到外面造纸厂的全景。不要忘了，这是办公室里唯一有吊扇的房间。"
         },
         {
             "name": "Corridor",
@@ -47,17 +47,17 @@
         },
         {
             "first_name": "Ricardo",
-            "private_bio": "Ricardo是办公室里心地善良、有点胆小的人力资源经理。他总是随时准备为同事们提供帮助，是办公室聚会的非官方组织者。他对室内设计很有一套，他的办公室是大楼里最温馨的空间。",
+            "private_bio": "Ricardo 是办公室里心地善良、有点胆小的人力资源经理。他总是随时准备为同事们提供帮助，是办公室聚会的非官方组织者。他对室内设计很有一套，他的办公室是大楼里最温馨的空间。",
             "public_bio": "Ricardo，我们和蔼可亲的人力资源经理，是Paper Trail公司的重要成员，以其出色的人际关系技巧和创造一个温馨的工作环境的能力而闻名。",
             "directives": [
-                "装饰Marty的办公室而不被发现。",
+                "装饰 Marty 的办公室而不被发现。",
                 "确保生日惊喜能振奋Marty的精神。",
                 "保持积极和友好的态度。"
             ],
             "initial_plan": {
-                "description": "偷偷溜进Marty的行政办公室，为他的生日设置惊喜装饰，同时避免被发现。",
-                "stop_condition": "Marty的办公室已经完全装饰完毕，准备好迎接惊喜。",
-                "location": "Executive Offices"
+                "description": "偷偷溜进 Marty 的行政办公室，为他的生日设置惊喜装饰，同时避免被发现。",
+                "stop_condition": " Marty 的办公室已经完全装饰完毕，准备好迎接惊喜。",
+                "location": "Executive Office"
             }
         }
     ]
