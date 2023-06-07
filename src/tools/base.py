@@ -194,8 +194,8 @@ def get_tools(
             name=ToolName.SPEAK.value,
             func=send_message_sync,
             coroutine=send_message_async,
-            description=f'say something in the {location_name}. The following people are also in the {location_name} and are the only people who will hear what you say: [{other_agent_names}] You can say something to everyone in the {location_name}, or address a specific person at your location. Input should be a json string with two keys: "recipient" and "message". The value of "recipient" should be a string of the recipients name or "everyone" if speaking to everyone, and the value of "message" should be a string. If you are waiting for a response, just keep using the \'wait\' tool. Example input: {{"recipient": "Jonathan", "message": "Hello Jonathan! 😄"}}',
-            tool_usage_description="To make progress on their plans, {agent_full_name} spoke to {recipient_full_name}.",
+            description=f'在{location_name}中说些什么。 也在{location_name}的人员，是唯一能听到你说的话的人: [{other_agent_names}] 你可以对{location_name}中的每个人说些什么，也可以对你所在地的某个特定的人说。 输入应该是一个有两个 key 的json字符串： "recipient" and "message". The value of "recipient" should be a string of the recipients name or "everyone" if speaking to everyone, and the value of "message" should be a string. If you are waiting for a response, just keep using the \'wait\' tool. Example input: {{"recipient": "Jonathan", "message": "Hello Jonathan! 😄"}}',
+            tool_usage_description="为了使他们的计划取得进展，{agent_full_name}与{recipient_full_name}交谈。",
             requires_context=True,
             args_schema=SpeakToolInput,
             requires_authorization=False,
@@ -205,21 +205,21 @@ def get_tools(
             name=ToolName.WAIT.value,
             func=wait_sync,
             coroutine=wait_async,
-            description="Useful for when you are waiting for something to happen. Input a very detailed description of what exactly you are waiting for. Start your input with 'I am waiting for...' (e.g. I am waiting for any type of meeting to start in the conference room).",
-            tool_usage_description="{agent_full_name} is waiting.",
+            description="在你等待事情发生时很有用。输入一个非常详细的描述，说明你到底在等待什么。 以 '我在等待...... '开始你的输入。(例如，我在会议室等待任何类型的会议开始）。",
+            tool_usage_description="{agent_full_name} 正在等待.",
             requires_context=True,
             requires_authorization=False,
             worldwide=True,
         ),
         ToolName.WOLFRAM_APLHA: CustomTool(
             name=ToolName.WOLFRAM_APLHA.value,
-            description="A wrapper around Wolfram Alpha. Useful for when you need to answer questions about Math, Science, Technology, Culture, Society and Everyday Life. Input should be a search query.",
+            description="Wolfram Alpha的一个封装器。当你需要回答有关数学、科学、技术、文化、社会和日常生活的问题时，它很有用。输入应该是一个search query。",
             func=WolframAlphaAPIWrapper().run,
             requires_authorization=False,
             worldwide=True,
             requires_context=False,
             tool_usage_summarization_prompt="你刚刚使用了Wolphram Alpha，输入内容如下: {tool_input} 并得到以下结果 {tool_result}. 写一句话，提供有用的信息，说明结果如何帮助你完成你的计划: {plan_description}.",
-            tool_usage_description="In order to make progress on their plans, {agent_full_name} 使用Wolphram Alpha并实现了以下几点: {tool_usage_reflection}.",
+            tool_usage_description="为了使他们的计划取得进展, {agent_full_name} 使用Wolphram Alpha并实现了以下几点: {tool_usage_reflection}.",
         )
         if WOLFRAM_ENABLED
         else None,
@@ -228,12 +228,12 @@ def get_tools(
             func=ask_human,
             coroutine=ask_human_async,
             description=(
-                "You can ask a human for guidance when you think you "
-                "got stuck or you are not sure what to do next. "
-                "The input should be a question for the human."
+                "当你认为自己陷入困境时，或者你不确定下一步该做什么，"
+                "你可以向人类寻求指导。"
+                "输入的内容应该是对人的问题。"
             ),
-            tool_usage_summarization_prompt="You have just asked a human for help by saying {tool_input}. This is what they replied: {tool_result}. Write a single sentence with useful information about how the result can help you accomplish your plan: {plan_description}.",
-            tool_usage_description="In order to make progress on their plans, {agent_full_name} spoke to a human.",
+            tool_usage_summarization_prompt="你刚刚通过 saying {tool_input}向人类寻求帮助。 他们是这样回答的: {tool_result}. 写一句话，提供有用的信息，说明结果如何帮助你完成你的计划: {plan_description}.",
+            tool_usage_description="为了使他们的计划取得进展, {agent_full_name} 向一个人类说话.",
             requires_context=True,
             requires_authorization=False,
             worldwide=True,
@@ -241,9 +241,9 @@ def get_tools(
         ToolName.COMPANY_DIRECTORY: CustomTool(
             name=ToolName.COMPANY_DIRECTORY.value,
             func=consult_directory,
-            description="A directory of all the people you can speak with, detailing their names and bios. Useful for when you need help from another person. Takes an empty string as input.",
-            tool_usage_summarization_prompt="You have just consulted the company directory and found out the following: {tool_result}. Write a single sentence with useful information about how the result can help you accomplish your plan: {plan_description}.",
-            tool_usage_description="In order to make progress on their plans, {agent_full_name} consulted the company directory and realised the following: {tool_usage_reflection}.",
+            description="你可以与之交谈的所有人员的目录，详细说明他们的姓名和简介。当你需要另一个人的帮助时很有用。接受一个空字符串作为输入。",
+            tool_usage_summarization_prompt="你刚刚查阅了公司名录，发现了以下情况: {tool_result}. 写一个single sentence，说明结果如何帮助你完成计划的有用信息： {plan_description}.",
+            tool_usage_description="为了使他们的计划取得进展, {agent_full_name} 查阅了公司名录，并意识到以下几点: {tool_usage_reflection}.",
             requires_context=True,  # this tool requires location_id as context
             requires_authorization=False,
             worldwide=True,
