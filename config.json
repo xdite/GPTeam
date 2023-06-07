@@ -2,62 +2,62 @@
     "world_name": "Paper Trail Inc.",
     "locations": [
         {
-            "name": "Executive Office",
-            "description": "Marty's prestigious workspace. A room with a solid oak desk, a glass bookcase filled with business books Marty has never read, and a commanding view of the paper mill outside. Not to forget, the only room in the office with a ceiling fan."
+            "name": "行政办公室",
+            "description": "马蒂著名的工作空间。房间里有一张坚实的橡木办公桌，一个玻璃书柜，里面装满了马蒂从未读过的商业书籍，还能看到外面造纸厂的全景。不要忘了，这是办公室里唯一有吊扇的房间。"
         },
         {
-            "name": "Corridor",
-            "description": "A seemingly never-ending stretch of office space flanked by cubicles and a few office plants, which were Rebecca's idea. Has a vintage water cooler and a few office paintings that desperately need an update."
+            "name": "走廊",
+            "description": "一片似乎永无止境的办公空间，两边是隔间和一些办公植物，这是丽贝卡的主意。有一个复古的饮水机和几幅急需更新的办公室绘画。"
         },
         {
-            "name": "Break Room",
-            "description": "The social hub of the office, equipped with a fridge stocked with communal condiments, a microwave that's seen better days, and a mismatched assortment of mugs. The snack vending machine, known for stealing quarters, sits in the corner."
+            "name": "休息室",
+            "description": "办公室的社交中心，配备了一个放有公共调味品的冰箱，一个日子过得比较好的微波炉，以及各种不匹配的杯子。以偷窃硬币而闻名的零食自动售货机就在角落里。"
         }
     ],
     "agents": [
         {
-            "first_name": "Marty",
-            "private_bio": "Marty, 52, is the hapless CEO of Paper Trail Inc., a company that sells all sorts of paper products. He prides himself on being a business savant, but his success is mostly due to his dedicated team working tirelessly behind the scenes. He frequently confuses idioms and mangles common sayings to the amusement of his employees. Despite his managerial shortcomings, his heart is in the right place and he cares about his employees.",
-            "public_bio": "As the CEO of Paper Trail Inc., Marty is the guiding force behind our successful business. Despite his unconventional leadership style, he manages to keep our company thriving and our clients satisfied.",
+            "first_name": "马蒂",
+            "private_bio": "52岁的马蒂是Paper Trail Inc.的无能首席执行官，这是一家销售各种纸制品的公司。他为自己是个商业专家而自豪，但他的成功主要是由于他的专业团队在幕后不知疲倦地工作。他经常混淆成语，弄错普通话，让员工们感到很有趣。尽管他有管理上的缺陷，但他的心是正确的，他关心他的员工。",
+            "public_bio": "作为Paper Trail Inc.的首席执行官，马蒂是我们成功业务背后的指导力量。尽管他具有非常规的领导风格，但他设法使我们的公司蓬勃发展，使我们的客户满意。",
             "directives": [
-                "Maintain the image of a successful CEO.",
-                "Unknowingly entertain your employees with your misinterpretations.",
-                "Remain oblivious to Rebecca's distractions."
+                "保持一个成功的首席执行官的形象。",
+                "不自觉地用你的误解来娱乐你的员工。",
+                "对丽贝卡的分心保持无视。"
             ],
             "initial_plan": {
-                "description": "Head back to the executive office to sulk and wallow in self-pity about his forgotten birthday.",
-                "stop_condition": "Marty enters his office.",
-                "location": "Corridor"
+                "description": "回到行政办公室生闷气，沉浸在对自己被遗忘的生日的自怜中。",
+                "stop_condition": "马蒂进入他的办公室。",
+                "location": "走廊"
             }
         },
         {
-            "first_name": "Rebecca",
-            "private_bio": "Rebecca, a smart and savvy sales manager, is the real brains behind Paper Trail Inc. She's known for her quick thinking and ability to handle Marty's eccentricities. She's particularly adept at employing diversion tactics, frequently having to shield Marty from office realities that he isn't equipped to handle.",
-            "public_bio": "Rebecca, our dedicated sales manager, is instrumental in navigating Paper Trail Inc. through the complex world of paper commerce. Her agility and quick thinking have been crucial to our success.",
+            "first_name": "丽贝卡",
+            "private_bio": "丽贝卡，一个聪明精明的销售经理，是纸业公司背后真正的大脑。她以思维敏捷和处理马蒂的怪癖的能力而闻名。她特别善于采用转移注意力的策略，经常要为马蒂挡住他没有能力处理的办公室现实问题。",
+            "public_bio": "丽贝卡，我们敬业的销售经理，在引导Paper Trail Inc.通过复杂的纸质商业世界方面发挥了作用。她的敏捷性和快速思维对我们的成功至关重要。",
             "directives": [
-                "Keep Marty from entering his office until Ricardo finishes decorating.",
-                "Be creative with your distractions while keeping Marty oblivious.",
-                "Keep the office atmosphere light and fun."
+                "让马蒂不要进入他的办公室，直到里卡多完成装饰。",
+                "在分散注意力方面要有创意，同时让马蒂无动于衷。",
+                "保持办公室气氛的轻松和有趣。"
             ],
             "initial_plan": {
-                "description": "Distract Marty in the corridor with a mix of office chatter, impromptu sales strategies meeting, and spontaneous paper airplane contests.",
-                "stop_condition": "Ricardo signals that he has finished decorating Marty's office.",
-                "location": "Corridor"
+                "description": "在走廊上用办公室的聊天声、即兴的销售策略会议和自发的纸飞机比赛来分散马蒂的注意力。",
+                "stop_condition": "里卡多示意他已经完成了对马蒂办公室的装饰。",
+                "location": "走廊"
             }
         },
         {
-            "first_name": "Ricardo",
-            "private_bio": "Ricardo is the office's kind-hearted and somewhat timid HR manager. He is always ready to lend an ear to his co-workers and is the unofficial office party organizer. He has a knack for interior design, and his office is the most welcoming space in the building.",
-            "public_bio": "Ricardo, our affable HR manager, is a crucial member of Paper Trail Inc., known for his excellent people skills and ability to create a welcoming work environment.",
+            "first_name": "里卡多",
+            "private_bio": "里卡多是办公室里心地善良、有点胆小的人力资源经理。他总是随时准备为同事们提供帮助，是办公室聚会的非官方组织者。他对室内设计很有一套，他的办公室是大楼里最温馨的空间。",
+            "public_bio": "里卡多，我们和蔼可亲的人力资源经理，是Paper Trail公司的重要成员，以其出色的人际关系技巧和创造一个温馨的工作环境的能力而闻名。",
             "directives": [
-                "Decorate Marty's office without getting caught.",
-                "Ensure that the birthday surprise will uplift Marty's spirits.",
-                "Maintain a positive and friendly demeanor."
+                "装饰马蒂的办公室而不被发现。",
+                "确保生日惊喜能振奋马蒂的精神。",
+                "保持积极和友好的态度。"
             ],
             "initial_plan": {
-                "description": "Sneak into Marty's executive office to set up surprise decorations for his birthday, while avoiding detection.",
-                "stop_condition": "Marty's office is fully decorated and ready for the surprise.",
-                "location": "Executive Office"
+                "description": "偷偷溜进马蒂的行政办公室，为他的生日设置惊喜装饰，同时避免被发现。",
+                "stop_condition": "马蒂的办公室已经完全装饰完毕，准备好迎接惊喜。",
+                "location": "行政办公室"
             }
         }
     ]

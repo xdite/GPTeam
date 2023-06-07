@@ -847,7 +847,7 @@ class Agent(BaseModel):
 
         self._log(
             "Reaction",
-            f"Decided to {parsed_reaction_response.reaction.value} the current plan: {parsed_reaction_response.thought_process}",
+            f"決定 {parsed_reaction_response.reaction.value} the current plan: {parsed_reaction_response.thought_process}",
         )
 
         self.context.update_agent(self._db_dict())
