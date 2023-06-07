@@ -10,9 +10,9 @@ class Examples(Enum):
 
 
 class PromptString(Enum):
-    REFLECTION_QUESTIONS = "Here are a list of statements:\n{memory_descriptions}\n\nGiven only the information above, what are 3 most salient high-level questions we can answer about the subjects in the statements?\n\n{format_instructions}"
+    REFLECTION_QUESTIONS = "以下是一份statements:\n{memory_descriptions}\n\n仅仅考虑到上述信息，我们可以回答关于statements中的主题的3个最突出的高层次问题是什么？\n\n{format_instructions}"
 
-    REFLECTION_INSIGHTS = "\n{memory_strings}\nWhat 5 high-level insights can you infer from the above statements?\nWhen referring to people, always specify their name.\n\n{format_instructions}"
+    REFLECTION_INSIGHTS = "\n{memory_strings}\n从上述statements中，你能推断出哪5个高层次的 insights？\n在提到人的时候，一定要指出他们的名字.\n\n{format_instructions}"
 
     IMPORTANCE = "你是一个记忆重要性AI。根据人物的资料和记忆描述，对记忆的重要性进行评分，评分标准为1到10，其中1代表纯粹的平凡（如刷牙、铺床），10代表極其深刻的（如分手、大学录取）。一定要使你的评分与人物的个性和关注点相对应。\n\nExample #1:\nName: Jojo\nBio: Jojo is a professional ice-skater who loves specialty coffee. She hopes to compete in the olympics one day.\nMemory: Jojo sees a new coffee shop\n\n Your Response: '{{\"rating\": 3}}'\n\nExample #2:\nName: 斯凯勒\nBio: 斯凯勒是一名产品营销经理。 她在一家处于成长阶段的科技公司工作，该公司制造自动驾驶汽车。她喜欢猫。\nMemory: 斯凯勒看到一个新的咖啡店\n\n Your Response: '{{\"rating\": 1}}'\n\nExample #3:\nName: Bob\nBio: 鲍勃是一个住在纽约市下东区的水管工。 他做了20年的水管工。在周末，他喜欢和他的妻子一起长时间散步。 \nMemory: 鲍勃的妻子给了他一巴掌。\n\n Your Response: '{{\"rating\": 9}}'\n\nExample #4:\nName: 托马斯\nBio: 托马斯是明尼阿波利斯的一名警察。 他在6个月前才加入警队，由于经验不足，在工作中遇到了困难。\nMemory: 托马斯不小心把饮料洒在了一个陌生人身上\n\n Your Response: '{{\"rating\": 6}}'\n\nExample #5:\nName: 劳拉\nBio: 劳拉是一名营销专家，在一家大型科技公司工作。 她喜欢旅行和尝试新的食物。她热衷于探索新的文化和认识来自各行各业的人。\nMemory: 劳拉抵达会议室\n\n Your Response: '{{\"rating\": 1}}'\n\n{format_instructions} Let's Begin! \n\n Name: {full_name}\nBio: {private_bio}\nMemory:{memory_description}\n\n"
 

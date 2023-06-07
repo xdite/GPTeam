@@ -218,8 +218,8 @@ def get_tools(
             requires_authorization=False,
             worldwide=True,
             requires_context=False,
-            tool_usage_summarization_prompt="You have just used Wolphram Alpha with the following input: {tool_input} and got the following result {tool_result}. Write a single sentence with useful information about how the result can help you accomplish your plan: {plan_description}.",
-            tool_usage_description="In order to make progress on their plans, {agent_full_name} used Wolphram Alpha and realised the following: {tool_usage_reflection}.",
+            tool_usage_summarization_prompt="你刚刚使用了Wolphram Alpha，输入内容如下: {tool_input} 并得到以下结果 {tool_result}. 写一句话，提供有用的信息，说明结果如何帮助你完成你的计划: {plan_description}.",
+            tool_usage_description="In order to make progress on their plans, {agent_full_name} 使用Wolphram Alpha并实现了以下几点: {tool_usage_reflection}.",
         )
         if WOLFRAM_ENABLED
         else None,

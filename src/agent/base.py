@@ -744,7 +744,7 @@ class Agent(BaseModel):
                 + [
                     AIMessage(content=response),
                     HumanMessage(
-                        content=f"Your response included the following invalid location_ids: {invalid_locations}. Please try again."
+                        content=f"你的回应包含了以下无效的location_ids: {invalid_locations}. 请再试一次。"
                     ),
                 ],
                 loading_text="🤔 Correcting plans...",

@@ -20,22 +20,22 @@ class PlanStatus(Enum):
     FAILED = "failed"
 
 class LLMSinglePlan(BaseModel):
-    index: int = Field(description="The plan number")
-    description: str = Field(description="A description of the plan")
-    start_time: datetime = Field(description="The starting time, in UTC, of the plan")
+    index: int = Field(description="计划编号")
+    description: str = Field(description="对计划的描述")
+    start_time: datetime = Field(description="计划的开始时间，UTC时间")
     stop_condition: str = Field(
-        description="The condition that will cause this plan to be completed"
+        description="导致本计划完成的条件"
     )
     max_duration_hrs: float = Field(
-        description="The maximum amount of time to spend on this activity before reassessing"
+        description="在重新评估之前，花在这项活动上的最大时间是什么？"
     )
     location_name: str = Field(
-        description="The name of the location. Must match the location name exactly."
+        description="地点的名称。必须与位置名称完全匹配。"
     )
 
 
 class LLMPlanResponse(BaseModel):
-    plans: list[LLMSinglePlan] = Field(description="A numbered list of plans")
+    plans: list[LLMSinglePlan] = Field(description="一个有编号的计划清单")
 
 
 class SinglePlan(BaseModel):
@@ -146,5 +146,3 @@ class SinglePlan(BaseModel):
 
     def make_plan_prompt(self):
         return f"\nDo this: {self.description}\nAt this location: {self.location.name}\nStop when this happens: {self.stop_condition}\nIf do not finish within {self.max_duration_hrs} hours, stop."
-
-
