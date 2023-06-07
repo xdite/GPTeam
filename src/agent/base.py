@@ -986,7 +986,7 @@ class Agent(BaseModel):
 
         self._log(
             "Observe",
-            f"Observed {len(events)} new events since {last_checked_events.strftime('%H:%M:%S')}",
+            f"自 {last_checked_events.strftime('%H:%M:%S')} 观察到 {len(events)} 新事件",
         )
 
         if len(events) > 0:

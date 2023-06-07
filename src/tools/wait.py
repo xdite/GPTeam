@@ -42,16 +42,16 @@ async def wait_async(agent_input: str, tool_context: ToolContext) -> str:
     # Get the response
     response = await llm.get_chat_completion(
         prompter.prompt,
-        loading_text="Checking if event has happened...",
+        loading_text="检查事件是否已经发生...",
     )
 
     # Parse the response
     parsed_response: HasHappenedLLMResponse = parser.parse(response)
 
     if parsed_response.has_happened:
-        return f"The event I was waiting for occured at {parsed_response.date_occured}. No need to wait anymore."
+        return f"我所等待的事件在{parsed_response.date_occured}发生了。不需要再等待了。"
     else:
-        return "The event I was waiting for has not happened yet. Waiting..."
+        return "我所等待的事件还没有发生。等待..."
 
 
 def wait_sync(agent_input: str, tool_context: ToolContext) -> str:
