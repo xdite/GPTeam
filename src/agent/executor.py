@@ -123,7 +123,7 @@ class CustomOutputParser(AgentOutputParser):
 
     def get_format_instructions(self) -> str:
         tool_names = ", ".join([tool.name for tool in self.tools])
-        return f"Your response should use the following format:\n\nTask: the task you must complete\nThought: your thoughts about what you should do\nAction: the action to take, which must be one of these words: [{tool_names}]\nAction Input: the input to the action\nObservation: the result of the action\n... (this Thought/Action/Action Input/Observation can repeated N times)\nThought: 'I have completed the task'\nFinal Response: the final response to the task\n\nIf you are not ready with a final response, then you must take an action.\n\nIf you determine that you are incapable of completing the task with the tools you have been given, return 'Final Response: Need Help', however, if you are in dialog with another character, responses such as 'I don't know' are valid responses. When in dialog, you should never, under any circumstance, break character, or admit that you are an AI.\nIf the task is complete and no specific response is needed, return 'Final Response: Done'"
+        return f"你的答复应使用以下格式:\n\nTask: 你必须完成的任务\nThought: 你对你应该做什么的想法\nAction: 要采取的行动，必须是这些词中的一个: [{tool_names}]\nAction Input: 行动的输入\nObservation: 行动的结果\n... (this Thought/Action/Action Input/Observation can repeated N times)\nThought: '我已经完成了任务'\nFinal Response: 对任务的最后回应\n\n如果你还没有准备好最后的回应，那么你必须采取一个行动。\n\n如果你确定你没有能力用你所得到的工具完成任务，请返回 'Final Response: 需要帮助', 但是，如果你在与另一个角色对话时，诸如 '我不知道'这样的回答是有效的。在对话中，在任何情况下，你都不应该破坏角色，或承认你是一个人工智能。\n如果任务已经完成，不需要具体的回应，返回 'Final Response: 已完成'"
 
 
 class PlanExecutorResponse(BaseModel):
