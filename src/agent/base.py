@@ -656,7 +656,7 @@ class Agent(BaseModel):
             agent_id=self.id,
             type=EventType.MESSAGE,
             subtype=MessageEventSubtype.AGENT_TO_AGENT,
-            description=f"{self.full_name} said to everyone in the {self.location.name}: '{response}'",
+            description=f"{self.full_name} 对在 {self.location.name} 的所有人说: '{response}'",
             location_id=self.location.id,
         )
 
@@ -797,7 +797,7 @@ class Agent(BaseModel):
     async def _react(self, events: list[Event]) -> LLMReactionResponse:
         """Get the recent activity and decide whether to replan to carry on"""
 
-        self._log("React", "Deciding how to react to recent events...")
+        self._log("React", "决定如何对最近的事件作出反应...")
 
         # LLM call to decide how to react to new events
         # Make the reaction parser
@@ -847,7 +847,7 @@ class Agent(BaseModel):
 
         self._log(
             "Reaction",
-            f"決定 {parsed_reaction_response.reaction.value} the current plan: {parsed_reaction_response.thought_process}",
+            f"決定 {parsed_reaction_response.reaction.value} 当前计划: {parsed_reaction_response.thought_process}",
         )
 
         self.context.update_agent(self._db_dict())
@@ -861,7 +861,7 @@ class Agent(BaseModel):
     ) -> PlanStatus:
         """Act on a plan"""
 
-        self._log("Act", "Starting to act on plan.")
+        self._log("Act", "开始按计划行动.")
 
         # If we are not in the right location, move to the new location
         if (hasattr(plan, 'location') and plan.location and self.location.id != plan.location.id):

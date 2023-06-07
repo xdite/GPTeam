@@ -27,7 +27,7 @@
             "initial_plan": {
                 "description": "回到行政办公室生闷气，沉浸在对自己被遗忘的生日的自怜中。",
                 "stop_condition": "Marty进入他的办公室。",
-                "location": "走廊"
+                "location": "Corridor"
             }
         },
         {
@@ -42,7 +42,7 @@
             "initial_plan": {
                 "description": "在走廊上用办公室的聊天声、即兴的销售策略会议和自发的纸飞机比赛来分散Marty的注意力。",
                 "stop_condition": "Ricardo示意他已经完成了对Marty办公室的装饰。",
-                "location": "走廊"
+                "location": "Corridor"
             }
         },
         {
@@ -57,7 +57,7 @@
             "initial_plan": {
                 "description": "偷偷溜进Marty的行政办公室，为他的生日设置惊喜装饰，同时避免被发现。",
                 "stop_condition": "Marty的办公室已经完全装饰完毕，准备好迎接惊喜。",
-                "location": "行政办公室"
+                "location": "Executive Offices"
             }
         }
     ]
